@@ -3,6 +3,11 @@ package com.example.medicineview
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.PopupWindow
 import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
@@ -13,5 +18,22 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.statusBarColor = ContextCompat.getColor(this, R.color.black)
         }
+
+        val button: Button = findViewById(R.id.bash)
+        val inflater: LayoutInflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val popupView = inflater.inflate(R.layout.next_popup, null)
+
+        val popupWindow = PopupWindow(
+            popupView,
+            500,
+            150
+        )
+
+        popupWindow.isOutsideTouchable = true
+
+        button.setOnClickListener {
+            popupWindow.showAtLocation(button, Gravity.CENTER, 300, -100)
+        }
+
     }
 }
