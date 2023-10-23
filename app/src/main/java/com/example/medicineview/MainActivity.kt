@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
 //            window.statusBarColor = ContextCompat.getColor(this, R.color.black)
 //        }
 
-        val intent = Intent(this@MainActivity , HomePage::class.java)
-        startActivity(intent)
+//        val intent = Intent(this@MainActivity , HomePage::class.java)
+//        startActivity(intent)
 
         val button: Button = findViewById(R.id.bash)
         val inflater: LayoutInflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
