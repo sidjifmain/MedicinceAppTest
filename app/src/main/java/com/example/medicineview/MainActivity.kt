@@ -1,5 +1,6 @@
 package com.example.medicineview
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,9 +16,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.statusBarColor = ContextCompat.getColor(this, R.color.black)
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSIOMeetingN_CODES.LOLLIPOP) {
+//            window.statusBarColor = ContextCompat.getColor(this, R.color.black)
+//        }
+
+        val intent = Intent(this@MainActivity , HomePage::class.java)
+        startActivity(intent)
 
         val button: Button = findViewById(R.id.bash)
         val inflater: LayoutInflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
